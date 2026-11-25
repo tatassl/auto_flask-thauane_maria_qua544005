@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Alex Machado">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AUTO FLASK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/icone.png') }}" type="image/png">
+  </head>
+  <body style="background-color: #eee">
+    <main class="container vh-100 d-flex align-items-center justify-content-center">
+      <div class="row">
+        <figure class="d-flex justify-content-center mb-5">
+          <img src="{{ url_for('static',filename='img/posto.png') }}" style="width: 150px; height: auto;">
+        </figure>
+        <div class="d-flex justify-content-center mb-2">
+          <h1>AUTO FLASK</h1>
+        </div>
+        <form action="" method="POST">
+          <div class="col-12 mt-5">
+            <label for="gasolina" class="form-label">Gasolina:</label>
+            <input type="number" class="form-control" name="gasolina" placeholder="RS 0,00" step="0.01" min="0" required>
+          </div>
+          <div class="col-12 mt-3">
+            <label for="etanol" class="form-label">Etanol:</label>
+            <input type="number" class="form-control" name="etanol" placeholder="R$ 0,00" step="0.01" min="0" required>
+          </div>
+          <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary">
+              Verificar
+            </button>
+          </div>
+        </form>
+        <div class="d-flex justify-content-center mt-3 mb-5">
+          <h2>{{ msg if msg else '' }}</h2>
+        </div>
+      </div>
+    </main>
+
+    <!-- js do bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+  </body>
+</html>
